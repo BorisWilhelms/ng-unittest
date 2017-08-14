@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { Document } from './document';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -11,7 +11,7 @@ export class DocumentService {
 
   public loadDocuments(): Observable<Document[]> {
     return this._http
-      .get('/assets/documents.json')
+      .get('/assets/documents.json', { headers: new Headers({ 'my-header': 'has-value' }) })
       .map(r => r.json());
   }
 }
