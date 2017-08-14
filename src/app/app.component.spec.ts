@@ -2,6 +2,7 @@ import { by } from 'protractor';
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 // 'describe' defines the test suite.
 describe('AppComponent Angular Test', () => {
@@ -13,6 +14,7 @@ describe('AppComponent Angular Test', () => {
       declarations: [
         AppComponent
       ],
+      // schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
